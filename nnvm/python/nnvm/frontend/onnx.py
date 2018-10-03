@@ -417,7 +417,7 @@ class Upsample(OnnxOpConverter):
         mode = attr.get('mode')
         if mode == b'nearest':
             method = "NEAREST_NEIGHBOR"
-        elif mode == b'linear':
+        elif mode == b'bilinear':
             method = "BILINEAR"
         else:
             raise ValueError("Invalid ONNX upsample mode: {}".format(mode))
